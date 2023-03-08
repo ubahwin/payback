@@ -31,27 +31,27 @@ struct ContentView: View {
                 }
                 .onDelete(perform: $duties.remove)
             }
-                    .navigationBarTitle("Payback", displayMode: .large)
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button(action: {
-                                isShowingAddDuty = true
-                                lastOrderPrice = ""
-                            }) {
-                                Image(systemName: "plus")
-                            }
-                                .sheet(isPresented: $isShowingAddDuty) {
-                                    AddDutyView(sum: lastOrderPrice)
-                                }
-                        }
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            NavigationLink {
-                                SettingsView()
-                            } label: {
-                                Image(systemName: "gearshape")
-                            }
-                        }
+            .navigationBarTitle("Payback", displayMode: .large)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        isShowingAddDuty = true
+                        lastOrderPrice = ""
+                    }) {
+                        Image(systemName: "plus")
                     }
+                        .sheet(isPresented: $isShowingAddDuty) {
+                            AddDutyView(sum: lastOrderPrice)
+                        }
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(systemName: "gearshape")
+                    }
+                }
+            }
         }
         .alert(isPresented: $isShowingPopUp) {
             Alert(
@@ -66,7 +66,6 @@ struct ContentView: View {
                 secondaryButton: .cancel(Text("Отмена"))
             )
         }
-
         .onAppear {
             if !isLastOrderChecked, let userSettings = settings.first {
                 isLastOrderChecked = true

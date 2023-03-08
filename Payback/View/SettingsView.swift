@@ -13,37 +13,8 @@ struct SettingsView: View {
 
     @ObservedResults(UserSettings.self) var userSettings
 
-    private func changeAppIcon(to iconName: String) {
-        UIApplication.shared.setAlternateIconName(iconName) { error in
-            if let error = error {
-                print("Error setting alternate icon \(error.localizedDescription)")
-            }
-        }
-    }
-    
-    let dataIcon: [String] = [
-        "RetroWave",
-        "Happy",
-        "Alien",
-        "Airline",
-        "Doomer",
-        "Dead Inside"
-    ]
-    
-    func AppIconButton(imageName: String) -> some View {
-        HStack {
-            Text(imageName)
-            Spacer()
-            Button(action: { changeAppIcon(to: imageName) }, label: {
-                Image(imageName)
-                    .resizable()
-                    .frame(width: 80, height: 80, alignment: .center)
-                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .circular))
-                    .padding()
-            })
-        }
-    }
-    
+    @StateObject var appSettings: AppSettings = AppSettings()
+
     var body: some View {
         NavigationStack {
             List {
@@ -68,13 +39,7 @@ struct SettingsView: View {
                 Section {
                     Toggle("Темная тема", isOn: $isDarkMode)
                     NavigationLink("Сменить иконку") {
-                        List {
-                            AppIconButton(imageName: "AppIconAlien")
-                            AppIconButton(imageName: "AppIconDeadInside")
-                            AppIconButton(imageName: "AppIconAirline")
-                            AppIconButton(imageName: "AppIconHappy")
-                            AppIconButton(imageName: "AppIconDoomer")
-                        }
+                        IconsListView().environmentObject(appSettings)
                     }
                     Button("path") {
                         let realm = try! Realm()
@@ -85,6 +50,54 @@ struct SettingsView: View {
             .navigationBarTitle("Настройки", displayMode: .large)
             .listStyle(.grouped)
         }
+    }
+}
+
+struct IconsListView: View {
+    @EnvironmentObject var appSettings: AppSettings
+
+    var body: some View {
+        Form {
+            Picker("", selection: $appSettings.iconIndex) {
+                ForEach(appSettings.icons.indices, id: \.self) { index in
+                    IconRow(icon: appSettings.icons[index])
+                    .tag(index)
+                }
+            }
+            .onChange(of: appSettings.iconIndex) { newIndex in
+                guard UIApplication.shared.supportsAlternateIcons else {
+                    print("Error icon")
+                    return
+                }
+                
+                let currentIndex = appSettings.icons.firstIndex(where: { icon in
+                    return icon.iconName == appSettings.currentIconName
+                }) ?? 0
+                guard newIndex != currentIndex else { return }
+                let newIconSelection = appSettings.icons[newIndex].iconName
+                UIApplication.shared.setAlternateIconName(newIconSelection) { error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+        .pickerStyle(.inline)
+    }
+}
+
+struct IconRow: View {
+    let icon: Icon
+    var body: some View {
+        HStack(alignment: .center) {
+            Image(uiImage: icon.image ?? UIImage())
+                .resizable()
+                .frame(width: 60, height: 60)
+                .cornerRadius(10)
+                .padding(.trailing)
+            Text(icon.displayName)
+        }
+        .padding(8)
     }
 }
 

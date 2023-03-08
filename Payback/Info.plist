@@ -4,6 +4,62 @@
 <dict>
 	<key>CFBundleIcons</key>
 	<dict>
+        
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+            
+			<key>Happy</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Happy</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+            
+            <key>Alien</key>
+            <dict>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>Alien</string>
+                </array>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+            </dict>
+            
+            <key>DeadInside</key>
+            <dict>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>DeadInside</string>
+                </array>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+            </dict>
+            
+            <key>Airline</key>
+            <dict>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>Airline</string>
+                </array>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+            </dict>
+            
+            <key>Doomer</key>
+            <dict>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>Doomer</string>
+                </array>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+            </dict>
+            
+		</dict>
+        
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
 			<key>CFBundleIconFiles</key>
