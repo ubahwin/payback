@@ -45,7 +45,6 @@ struct AboutDutyView: View {
                         Text("Cумма")
                         Spacer()
                         Text(Formatter.getFormattedNumber(number: duty.sum) + "₽")
-                            .textSelection(.enabled)
                     }
                     HStack {
                         Text("Кол-во человек")
@@ -60,7 +59,7 @@ struct AboutDutyView: View {
                     HStack {
                         Text("Долг")
                         Spacer()
-                        Text(String(Formatter.getFormattedNumber(number: duty.dutyPrice) + "₽"))
+                        Text(String(Formatter.getFormattedNumber(number: duty.dutyPrice)) + "₽")
                             .textSelection(.enabled)
                     }
                     HStack {
@@ -76,10 +75,18 @@ struct AboutDutyView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         if isEditing {
-                            $duty.sum.wrappedValue = Double(Formatter.getFormattedNumber(number: Double(reSum)!))!
-                            $duty.dutyPrice.wrappedValue = Double(Formula().calculate(peopleCount: duty.peopleCount, sum: String(duty.sum)))
+
+                            if reSum != "" {
+                                $duty.sum.wrappedValue = Double(Formatter.getFormattedNumber(number: Double(reSum)!))!
+                            }
+                            print(duty.name, duty.peopleCount, duty.sum, duty.dutyPrice)
+                            if duty.name == "Каршеринг" { // TODO: refactor
+                                $duty.dutyPrice.wrappedValue = Formula().calculate(peopleCount: duty.peopleCount, sum: String(duty.sum))
+                            } else {
+                                $duty.dutyPrice.wrappedValue = duty.sum / Double(duty.peopleCount)
+                            }
+                            
                         }
-                        
                         self.isEditing.toggle()
                     }) {
                         Image(systemName: "square.and.pencil")
