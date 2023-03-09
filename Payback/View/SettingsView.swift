@@ -37,7 +37,7 @@ struct SettingsView: View {
                     }
                 }
                 Section {
-                    Toggle("Темная тема", isOn: $isDarkMode)
+//                    Toggle("Темная тема", isOn: $isDarkMode)
                     NavigationLink("Сменить иконку") {
                         IconsListView().environmentObject(appSettings)
                     }

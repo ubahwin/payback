@@ -17,9 +17,6 @@ struct AboutDutyView: View {
     @Environment(\.presentationMode) var presentationMode
         
     @State private var reSum: String = ""
-    @State private var rePeopleCount: Int16 = 2
-    @State private var reDate = Date()
-    @State private var reAbout: String = ""
     
     var body: some View {
         VStack {
@@ -31,32 +28,17 @@ struct AboutDutyView: View {
                             .keyboardType(.decimalPad)
                     }
                     HStack {
-                        Stepper(value: $rePeopleCount, in: Int16(duty.peopleCount) ... 30) {
-                            Text("Кол-во человек: " + String(rePeopleCount))
+                        Stepper(value: $duty.peopleCount, in: 2 ... 30) {
+                            Text("Кол-во человек: " + String(duty.peopleCount))
                         }
                     }
                     HStack {
-                        DatePicker(selection: $reDate, label: { Text("Дата") })
+                        DatePicker(selection: $duty.date, label: { Text("Дата") })
                             .environment(\.locale, Locale(identifier: "ru_RU"))
                     }
                     HStack {
                         Text("Описание")
-                        TextField(duty.about, text: $reAbout)
-                    }
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            //refresh
-                            duty.sum = NumberFormatter().number(from: reSum)?.doubleValue ?? 0
-                            isEditing = false
-                        }) {
-                            Text("Обновить")
-                        }
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .clipShape(RoundedRectangle (cornerRadius: 5))
-                        Spacer()
+                        TextField(duty.about, text: $duty.about)
                     }
                 } else {
                     HStack {
@@ -93,6 +75,11 @@ struct AboutDutyView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
+                        if isEditing {
+                            $duty.sum.wrappedValue = Double(Formatter.getFormattedNumber(number: Double(reSum)!))!
+                            $duty.dutyPrice.wrappedValue = Double(Formula().calculate(peopleCount: duty.peopleCount, sum: String(duty.sum)))
+                        }
+                        
                         self.isEditing.toggle()
                     }) {
                         Image(systemName: "square.and.pencil")

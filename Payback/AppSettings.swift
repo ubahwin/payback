@@ -10,7 +10,7 @@ import UIKit
 
 public class AppSettings: ObservableObject {
     @Published public var iconIndex: Int = 0
-
+    
     public private(set) var icons: [Icon] = []
     public var currentIconName: String? {
         UIApplication.shared.alternateIconName
@@ -45,7 +45,6 @@ public class AppSettings: ObservableObject {
                                 image: UIImage(named: iconFileName))
                         )
                     }
-                    
                 }
             }
         }

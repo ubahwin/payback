@@ -11,6 +11,7 @@
 		36AB76E46994465B3094612F /* OrdersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB72686A1C90C392F91370 /* OrdersResponse.swift */; };
 		7DC8B7FD6B8E7D7C91A88C8A /* Pods_Payback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CDDA67681D74C3F3FC59B /* Pods_Payback.framework */; };
 		B708C54C29B2185B0006C7DC /* Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C54B29B2185B0006C7DC /* Duty.swift */; };
+		B72056EE29B9BC5100362903 /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72056ED29B9BC5100362903 /* Formula.swift */; };
 		B741987B299FDE71003CA61E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741987A299FDE71003CA61E /* SettingsView.swift */; };
 		B741987E299FDF37003CA61E /* SettingsLoginCityDriveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741987C299FDF37003CA61E /* SettingsLoginCityDriveView.swift */; };
 		B741987F299FDF37003CA61E /* SettingsLoginCityDriveSmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741987D299FDF37003CA61E /* SettingsLoginCityDriveSmsView.swift */; };
@@ -37,7 +38,6 @@
 		B7D71E5D2906811700234120 /* AddDutyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D71E5C2906811600234120 /* AddDutyView.swift */; };
 		B7D71E5F290681AB00234120 /* AboutDutyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D71E5E290681AB00234120 /* AboutDutyView.swift */; };
 		B7D71E612906825100234120 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D71E602906825100234120 /* Function.swift */; };
-		B7F5421C29B279D20095560C /* HotReloading in Frameworks */ = {isa = PBXBuildFile; productRef = B7F5421B29B279D20095560C /* HotReloading */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +45,7 @@
 		36AB79B969077B3FDD97A6F1 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		7054DC317BBF6ECB74EFF207 /* Pods-Payback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payback.debug.xcconfig"; path = "Target Support Files/Pods-Payback/Pods-Payback.debug.xcconfig"; sourceTree = "<group>"; };
 		B708C54B29B2185B0006C7DC /* Duty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duty.swift; sourceTree = "<group>"; };
+		B72056ED29B9BC5100362903 /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		B741987A299FDE71003CA61E /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B741987C299FDF37003CA61E /* SettingsLoginCityDriveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsLoginCityDriveView.swift; sourceTree = "<group>"; };
 		B741987D299FDF37003CA61E /* SettingsLoginCityDriveSmsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsLoginCityDriveSmsView.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7F5421C29B279D20095560C /* HotReloading in Frameworks */,
 				7DC8B7FD6B8E7D7C91A88C8A /* Pods_Payback.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +182,7 @@
 				B7BECCEA299FB4C100DF8D7C /* ApiRequest.swift */,
 				B7BECCEF299FC0FE00DF8D7C /* CityDriveManager.swift */,
 				B7B4B7EB29B7A6C800B6D9AF /* AppSettings.swift */,
+				B72056ED29B9BC5100362903 /* Formula.swift */,
 			);
 			path = Payback;
 			sourceTree = "<group>";
@@ -229,7 +230,6 @@
 			);
 			name = Payback;
 			packageProductDependencies = (
-				B7F5421B29B279D20095560C /* HotReloading */,
 			);
 			productName = Payback;
 			productReference = B7D71E452906806A00234120 /* Payback.app */;
@@ -354,6 +354,7 @@
 				B764837229AB8D7400D99D78 /* UserSettings.swift in Sources */,
 				B764715A290932AB005A3125 /* CellView.swift in Sources */,
 				B7D71E4B2906806A00234120 /* ContentView.swift in Sources */,
+				B72056EE29B9BC5100362903 /* Formula.swift in Sources */,
 				B7D71E492906806A00234120 /* PaybackApp.swift in Sources */,
 				36AB76E46994465B3094612F /* OrdersResponse.swift in Sources */,
 				36AB7226CD7FB0311C7862D6 /* OrderItem.swift in Sources */,
@@ -495,8 +496,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -526,8 +527,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,14 +575,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B7F5421B29B279D20095560C /* HotReloading */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B7F5421A29B279D20095560C /* XCRemoteSwiftPackageReference "HotReloading" */;
-			productName = HotReloading;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B7D71E3D2906806A00234120 /* Project object */;
 }

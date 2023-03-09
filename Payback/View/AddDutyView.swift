@@ -35,8 +35,8 @@ struct AddDutyView: View {
             name = "Другое"
             duty = (NumberFormatter().number(from: sum)?.doubleValue ?? 0) / Double(peopleCount)
         default:
-            duty = (NumberFormatter().number(from: sum)?.doubleValue ?? 0) / Double(peopleCount) * (1 + (Double(percent)/(100 * Double(peopleCount))))
-            // (sum / peopleCount) * (1 + (percent/(100*peopleCount))) - формула
+            duty = Formula().calculate(peopleCount: peopleCount, sum: sum)
+//            (NumberFormatter().number(from: sum)?.doubleValue ?? 0) / Double(peopleCount) * (1 + (Double(percent)/(100 * Double(peopleCount))))
         }
     }
     
