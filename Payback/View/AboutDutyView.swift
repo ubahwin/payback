@@ -79,13 +79,11 @@ struct AboutDutyView: View {
                             if reSum != "" {
                                 $duty.sum.wrappedValue = Double(Formatter.getFormattedNumber(number: Double(reSum)!))!
                             }
-                            print(duty.name, duty.peopleCount, duty.sum, duty.dutyPrice)
                             if duty.name == "Каршеринг" { // TODO: refactor
-                                $duty.dutyPrice.wrappedValue = Formula().calculate(peopleCount: duty.peopleCount, sum: String(duty.sum))
+                                $duty.dutyPrice.wrappedValue = Formula().calculate(peopleCount: duty.peopleCount, sum: String(Int(duty.sum)))
                             } else {
                                 $duty.dutyPrice.wrappedValue = duty.sum / Double(duty.peopleCount)
                             }
-                            
                         }
                         self.isEditing.toggle()
                     }) {
