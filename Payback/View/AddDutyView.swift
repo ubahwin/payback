@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealmSwift
+import Contacts
 
 struct AddDutyView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -35,7 +36,24 @@ struct AddDutyView: View {
             name = "Другое"
             duty = (NumberFormatter().number(from: sum)?.doubleValue ?? 0) / Double(peopleCount)
         default:
-            duty = Formula().calculate(peopleCount: peopleCount, sum: sum)
+            duty = Formula().calculate(
+                peopleCount: Double(peopleCount),
+                sum: Double(sum.replacingOccurrences(of: ",", with: ".")) ?? 0
+            )
+        }
+    }
+    
+    func fetchAllContacts () {
+        let store = CNContactStore ()
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
+        do {
+            try store.enumerateContacts(with: fetchRequest, usingBlock: { contact, result in
+                print(contact.givenName)
+            })
+        }
+        catch {
+            print("Error")
         }
     }
     
@@ -46,7 +64,7 @@ struct AddDutyView: View {
                     Text("Каршеринг").tag(DutyTypeEnum.carsh)
                     Text("Другое").tag(DutyTypeEnum.other)
                 }
-                Stepper(value: $peopleCount, in: 2 ... 30) {
+                Stepper(value: $peopleCount, in: 2 ... 20) {
                     Text("Кол-во человек: " + String(peopleCount))
                 }
 
@@ -62,6 +80,16 @@ struct AddDutyView: View {
 
                 TextField("Описание...", text: $about)
 
+                Button(
+                    action: {
+                        fetchAllContacts()
+                    },
+                    label: {
+                        Image("")
+                            .clipShape(SuperEllipseShape(rate: 0.9))
+                    }
+                )
+                
                 HStack {
                     Spacer()
                     Button(action: {
@@ -70,7 +98,7 @@ struct AddDutyView: View {
                         // add duty in realm
                         let newDuty = Duty(
                                 name: name,
-                                sum: NumberFormatter().number(from: sum)?.doubleValue ?? 0.0, // TODO: refactor
+                                sum: Double(sum.replacingOccurrences(of: ",", with: ".")) ?? 0, // TODO: refactor
                                 peopleCount: peopleCount,
                                 image: image,
                                 dutyPrice: duty,

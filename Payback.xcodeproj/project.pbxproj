@@ -17,6 +17,8 @@
 		B741987F299FDF37003CA61E /* SettingsLoginCityDriveSmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741987D299FDF37003CA61E /* SettingsLoginCityDriveSmsView.swift */; };
 		B7419881299FF968003CA61E /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7419880299FF968003CA61E /* SessionResponse.swift */; };
 		B7419883299FFA14003CA61E /* SessionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7419882299FFA14003CA61E /* SessionUser.swift */; };
+		B7615F1329BBA05D00B041A5 /* AddPersonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7615F1229BBA05D00B041A5 /* AddPersonRowView.swift */; };
+		B7615F1529BBA3BE00B041A5 /* Superellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7615F1429BBA3BE00B041A5 /* Superellipse.swift */; };
 		B764715A290932AB005A3125 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7647159290932AB005A3125 /* CellView.swift */; };
 		B764837229AB8D7400D99D78 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764837129AB8D7400D99D78 /* UserSettings.swift */; };
 		B791E3AA29080F95006421FB /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791E3A929080F95006421FB /* StartView.swift */; };
@@ -51,6 +53,8 @@
 		B741987D299FDF37003CA61E /* SettingsLoginCityDriveSmsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsLoginCityDriveSmsView.swift; sourceTree = "<group>"; };
 		B7419880299FF968003CA61E /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 		B7419882299FFA14003CA61E /* SessionUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUser.swift; sourceTree = "<group>"; };
+		B7615F1229BBA05D00B041A5 /* AddPersonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonRowView.swift; sourceTree = "<group>"; };
+		B7615F1429BBA3BE00B041A5 /* Superellipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Superellipse.swift; sourceTree = "<group>"; };
 		B7647159290932AB005A3125 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		B764837129AB8D7400D99D78 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		B791E3A929080F95006421FB /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				B7BECCEF299FC0FE00DF8D7C /* CityDriveManager.swift */,
 				B7B4B7EB29B7A6C800B6D9AF /* AppSettings.swift */,
 				B72056ED29B9BC5100362903 /* Formula.swift */,
+				B7615F1429BBA3BE00B041A5 /* Superellipse.swift */,
 			);
 			path = Payback;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				B791E3A929080F95006421FB /* StartView.swift */,
 				B791E3AB29081004006421FB /* StartButtonView.swift */,
 				B7647159290932AB005A3125 /* CellView.swift */,
+				B7615F1229BBA05D00B041A5 /* AddPersonRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 			files = (
 				B741987B299FDE71003CA61E /* SettingsView.swift in Sources */,
 				B791E3AC29081004006421FB /* StartButtonView.swift in Sources */,
+				B7615F1529BBA3BE00B041A5 /* Superellipse.swift in Sources */,
 				B7B4B7EC29B7A6C800B6D9AF /* AppSettings.swift in Sources */,
 				B7BECCF0299FC0FE00DF8D7C /* CityDriveManager.swift in Sources */,
 				B7D71E5F290681AB00234120 /* AboutDutyView.swift in Sources */,
@@ -355,6 +362,7 @@
 				B764715A290932AB005A3125 /* CellView.swift in Sources */,
 				B7D71E4B2906806A00234120 /* ContentView.swift in Sources */,
 				B72056EE29B9BC5100362903 /* Formula.swift in Sources */,
+				B7615F1329BBA05D00B041A5 /* AddPersonRowView.swift in Sources */,
 				B7D71E492906806A00234120 /* PaybackApp.swift in Sources */,
 				36AB76E46994465B3094612F /* OrdersResponse.swift in Sources */,
 				36AB7226CD7FB0311C7862D6 /* OrderItem.swift in Sources */,
@@ -493,6 +501,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Payback/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -524,6 +533,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Payback/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

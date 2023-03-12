@@ -8,10 +8,10 @@
 import Foundation
 
 class Formula {
-    var percent: Int16 = 20
+    var percent: Double = 20
     
     // (sum / peopleCount) * (1 + (percent/(100*peopleCount))) - формула
-    func calculate(peopleCount: Int16, sum: String) -> Double {
-        return (NumberFormatter().number(from: sum)?.doubleValue ?? 0) / Double(peopleCount) * (1 + (Double(self.percent)/(100 * Double(peopleCount))))
+    func calculate(peopleCount: Double, sum: Double) -> Double {
+        return sum / peopleCount * (1 + (self.percent/(100 * peopleCount)))
     }
 }

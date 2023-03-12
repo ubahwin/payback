@@ -75,12 +75,14 @@ struct AboutDutyView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         if isEditing {
-
                             if reSum != "" {
-                                $duty.sum.wrappedValue = Double(Formatter.getFormattedNumber(number: Double(reSum)!))!
+                                $duty.sum.wrappedValue = Double(Formatter.getFormattedNumber(number: Double(reSum.replacingOccurrences(of: ",", with: ".")) ?? 0).replacingOccurrences(of: ",", with: ".")) ?? 0
                             }
                             if duty.name == "Каршеринг" { // TODO: refactor
-                                $duty.dutyPrice.wrappedValue = Formula().calculate(peopleCount: duty.peopleCount, sum: String(Int(duty.sum)))
+                                $duty.dutyPrice.wrappedValue = Formula().calculate(
+                                    peopleCount: Double(duty.peopleCount),
+                                    sum: duty.sum
+                                )
                             } else {
                                 $duty.dutyPrice.wrappedValue = duty.sum / Double(duty.peopleCount)
                             }

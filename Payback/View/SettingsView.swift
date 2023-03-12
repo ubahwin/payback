@@ -30,14 +30,8 @@ struct SettingsView: View {
                             }
                         }
                     }
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        Text("Войти в Делимобиль")
-                    }
                 }
                 Section {
-//                    Toggle("Темная тема", isOn: $isDarkMode)
                     NavigationLink("Сменить иконку") {
                         IconsListView().environmentObject(appSettings)
                     }
