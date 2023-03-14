@@ -7,7 +7,6 @@
 
 import SwiftUI
 import RealmSwift
-import Contacts
 
 struct AddDutyView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -43,20 +42,6 @@ struct AddDutyView: View {
         }
     }
     
-    func fetchAllContacts () {
-        let store = CNContactStore ()
-        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
-        let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
-        do {
-            try store.enumerateContacts(with: fetchRequest, usingBlock: { contact, result in
-                print(contact.givenName)
-            })
-        }
-        catch {
-            print("Error")
-        }
-    }
-    
     var body: some View {
         NavigationView {
             List {
@@ -79,16 +64,6 @@ struct AddDutyView: View {
                     .environment(\.locale, Locale(identifier: "ru_RU"))
 
                 TextField("Описание...", text: $about)
-
-                Button(
-                    action: {
-                        fetchAllContacts()
-                    },
-                    label: {
-                        Image("")
-                            .clipShape(SuperEllipseShape(rate: 0.9))
-                    }
-                )
                 
                 HStack {
                     Spacer()

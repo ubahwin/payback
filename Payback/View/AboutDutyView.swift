@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealmSwift
+import Contacts
 
 struct AboutDutyView: View {
     @ObservedRealmObject var duty: Duty
@@ -17,6 +18,20 @@ struct AboutDutyView: View {
     @Environment(\.presentationMode) var presentationMode
         
     @State private var reSum: String = ""
+    
+    func fetchAllContacts () {
+        let store = CNContactStore ()
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
+        do {
+            try store.enumerateContacts(with: fetchRequest, usingBlock: { contact, result in
+                print(contact.givenName)
+            })
+        }
+        catch {
+            print("Error")
+        }
+    }
     
     var body: some View {
         VStack {

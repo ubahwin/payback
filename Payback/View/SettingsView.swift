@@ -9,8 +9,8 @@ import SwiftUI
 import RealmSwift
 
 struct SettingsView: View {
-    @State var isDarkMode: Bool = true
-
+    @State private var showAlert: Bool = false
+    
     @ObservedResults(UserSettings.self) var userSettings
 
     @StateObject var appSettings: AppSettings = AppSettings()
@@ -30,15 +30,33 @@ struct SettingsView: View {
                             }
                         }
                     }
+                    Button("Выйти") {
+                        if !userSettings.isEmpty {
+                            
+                        }
+                        for settings in userSettings {
+                            $userSettings.remove(settings)
+                        }
+                        showAlert = true
+                        
+                    }
+                    .foregroundColor(.red)
+                    .alert("Вы вышли из аккаунта СитиДрайв", isPresented: $showAlert) {
+                        Button("Хорошо") {
+                            self.showAlert = false
+                        }
+                    }
                 }
                 Section {
                     NavigationLink("Сменить иконку") {
                         IconsListView().environmentObject(appSettings)
                     }
-                    Button("path") {
-                        let realm = try! Realm()
-                        print(realm.configuration.fileURL!)
-                    }
+                    #if targetEnvironment(simulator)
+                        Button("path") {
+                            let realm = try! Realm()
+                            print(realm.configuration.fileURL!)
+                        }
+                    #endif
                 }
             }
             .navigationBarTitle("Настройки", displayMode: .large)
@@ -100,4 +118,3 @@ struct SettingsView_Previews: PreviewProvider {
         SettingsView()
     }
 }
-
