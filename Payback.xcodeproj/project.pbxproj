@@ -11,6 +11,7 @@
 		36AB76E46994465B3094612F /* OrdersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB72686A1C90C392F91370 /* OrdersResponse.swift */; };
 		7DC8B7FD6B8E7D7C91A88C8A /* Pods_Payback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CDDA67681D74C3F3FC59B /* Pods_Payback.framework */; };
 		B708C54C29B2185B0006C7DC /* Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C54B29B2185B0006C7DC /* Duty.swift */; };
+		B711730629C2488B00CB604C /* CityBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B711730529C2488B00CB604C /* CityBack.png */; };
 		B72056EE29B9BC5100362903 /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72056ED29B9BC5100362903 /* Formula.swift */; };
 		B741987B299FDE71003CA61E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741987A299FDE71003CA61E /* SettingsView.swift */; };
 		B741987E299FDF37003CA61E /* SettingsLoginCityDriveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741987C299FDF37003CA61E /* SettingsLoginCityDriveView.swift */; };
@@ -45,6 +46,7 @@
 		36AB79B969077B3FDD97A6F1 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		7054DC317BBF6ECB74EFF207 /* Pods-Payback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payback.debug.xcconfig"; path = "Target Support Files/Pods-Payback/Pods-Payback.debug.xcconfig"; sourceTree = "<group>"; };
 		B708C54B29B2185B0006C7DC /* Duty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duty.swift; sourceTree = "<group>"; };
+		B711730529C2488B00CB604C /* CityBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CityBack.png; sourceTree = "<group>"; };
 		B72056ED29B9BC5100362903 /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		B741987A299FDE71003CA61E /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B741987C299FDF37003CA61E /* SettingsLoginCityDriveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsLoginCityDriveView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				B7B4B7E129B7A37400B6D9AF /* Alien.png */,
 				B7B4B7DE29B7A37300B6D9AF /* Airline.png */,
 				B7B4B7E029B7A37400B6D9AF /* Doomer.png */,
+				B711730529C2488B00CB604C /* CityBack.png */,
 				B7B4B7DF29B7A37400B6D9AF /* DeadInside.png */,
 			);
 			path = Assets;
@@ -279,6 +282,7 @@
 				B7D71E502906806B00234120 /* Preview Assets.xcassets in Resources */,
 				B7B4B7E429B7A37400B6D9AF /* DeadInside.png in Resources */,
 				B7B4B7E529B7A37400B6D9AF /* Doomer.png in Resources */,
+				B711730629C2488B00CB604C /* CityBack.png in Resources */,
 				B7D71E4D2906806B00234120 /* Assets.xcassets in Resources */,
 				B7B4B7E829B7A3AC00B6D9AF /* RetroWave.png in Resources */,
 				B7B4B7E229B7A37400B6D9AF /* Happy.png in Resources */,

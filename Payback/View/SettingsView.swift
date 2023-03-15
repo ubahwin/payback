@@ -31,14 +31,10 @@ struct SettingsView: View {
                         }
                     }
                     Button("Выйти") {
-                        if !userSettings.isEmpty {
-                            
-                        }
                         for settings in userSettings {
                             $userSettings.remove(settings)
                         }
                         showAlert = true
-                        
                     }
                     .foregroundColor(.red)
                     .alert("Вы вышли из аккаунта СитиДрайв", isPresented: $showAlert) {
