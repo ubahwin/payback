@@ -7,3 +7,6 @@
 <img src="images/3.jpeg" style="height: 500px"> | <img src="images/4.jpeg" style="height: 500px"> <br>
 Дата по дефолту - текущая <br>
 <img src="images/5.jpeg" style="height: 500px">
+
+Формула где х - сумма, с - количество человек:
+<img src="images/formula.gif">
