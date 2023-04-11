@@ -13,8 +13,6 @@ struct ContentView: View {
     @State private var isShowingAddDuty: Bool = false
     @State private var isShowingSettings: Bool = false
     @State private var isShowingPopUp: Bool = false
-    @State private var isLastOrderChecked: Bool = false // Hot reloading
-
     @State private var lastName = ""
     @State private var lastOrderPrice = ""
 
@@ -67,8 +65,7 @@ struct ContentView: View {
             )
         }
         .onAppear {
-            if !isLastOrderChecked, let userSettings = settings.first {
-                isLastOrderChecked = true
+            if let userSettings = settings.first {
                 CityDriveManager().getLastOrder(sessionId: userSettings.sessionId) { result in
                     switch result {
                     case .success(let model):

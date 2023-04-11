@@ -6,15 +6,6 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-            <key>CityBack</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>CityBack</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
 			<key>Airline</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
@@ -29,6 +20,15 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>Alien</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>CityBack</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>CityBack</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
@@ -72,6 +72,11 @@
 			<key>UIPrerenderedIcon</key>
 			<false/>
 		</dict>
+	</dict>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>LaunchImage</string>
 	</dict>
 </dict>
 </plist>

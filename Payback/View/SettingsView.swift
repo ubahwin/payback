@@ -61,54 +61,6 @@ struct SettingsView: View {
     }
 }
 
-struct IconsListView: View {
-    @EnvironmentObject var appSettings: AppSettings
-
-    var body: some View {
-        Form {
-            Picker("", selection: $appSettings.iconIndex) {
-                ForEach(appSettings.icons.indices, id: \.self) { index in
-                    IconRow(icon: appSettings.icons[index])
-                    .tag(index)
-                }
-            }
-            .onChange(of: appSettings.iconIndex) { newIndex in
-                guard UIApplication.shared.supportsAlternateIcons else {
-                    print("Error icon")
-                    return
-                }
-                
-                let currentIndex = appSettings.icons.firstIndex(where: { icon in
-                    return icon.iconName == appSettings.currentIconName
-                }) ?? 0
-                guard newIndex != currentIndex else { return }
-                let newIconSelection = appSettings.icons[newIndex].iconName
-                UIApplication.shared.setAlternateIconName(newIconSelection) { error in
-                    if let error = error {
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-        }
-        .pickerStyle(.inline)
-    }
-}
-
-struct IconRow: View {
-    let icon: Icon
-    var body: some View {
-        HStack(alignment: .center) {
-            Image(uiImage: icon.image ?? UIImage())
-                .resizable()
-                .frame(width: 60, height: 60)
-                .cornerRadius(10)
-                .padding(.trailing)
-            Text(icon.displayName)
-        }
-        .padding(8)
-    }
-}
-
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()

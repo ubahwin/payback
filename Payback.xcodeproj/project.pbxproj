@@ -20,6 +20,7 @@
 		B7419883299FFA14003CA61E /* SessionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7419882299FFA14003CA61E /* SessionUser.swift */; };
 		B764715A290932AB005A3125 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7647159290932AB005A3125 /* CellView.swift */; };
 		B764837229AB8D7400D99D78 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764837129AB8D7400D99D78 /* UserSettings.swift */; };
+		B766AB2329E3FC70009645A4 /* IconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B766AB2229E3FC70009645A4 /* IconListView.swift */; };
 		B791E3AA29080F95006421FB /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791E3A929080F95006421FB /* StartView.swift */; };
 		B791E3AC29081004006421FB /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791E3AB29081004006421FB /* StartButtonView.swift */; };
 		B7B4B7E229B7A37400B6D9AF /* Happy.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B4B7DD29B7A37300B6D9AF /* Happy.png */; };
@@ -55,6 +56,7 @@
 		B7419882299FFA14003CA61E /* SessionUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUser.swift; sourceTree = "<group>"; };
 		B7647159290932AB005A3125 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		B764837129AB8D7400D99D78 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		B766AB2229E3FC70009645A4 /* IconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconListView.swift; sourceTree = "<group>"; };
 		B791E3A929080F95006421FB /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		B791E3AB29081004006421FB /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		B7B4B7DB29B7A2E000B6D9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				B791E3A929080F95006421FB /* StartView.swift */,
 				B791E3AB29081004006421FB /* StartButtonView.swift */,
 				B7647159290932AB005A3125 /* CellView.swift */,
+				B766AB2229E3FC70009645A4 /* IconListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,7 +266,6 @@
 			);
 			mainGroup = B7D71E3C2906806A00234120;
 			packageReferences = (
-				B7F5421A29B279D20095560C /* XCRemoteSwiftPackageReference "HotReloading" */,
 			);
 			productRefGroup = B7D71E462906806A00234120 /* Products */;
 			projectDirPath = "";
@@ -352,6 +354,7 @@
 				B741987F299FDF37003CA61E /* SettingsLoginCityDriveSmsView.swift in Sources */,
 				B741987E299FDF37003CA61E /* SettingsLoginCityDriveView.swift in Sources */,
 				B7D71E5D2906811700234120 /* AddDutyView.swift in Sources */,
+				B766AB2329E3FC70009645A4 /* IconListView.swift in Sources */,
 				B7D71E612906825100234120 /* Function.swift in Sources */,
 				B7419883299FFA14003CA61E /* SessionUser.swift in Sources */,
 				B791E3AA29080F95006421FB /* StartView.swift in Sources */,
@@ -418,6 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -473,6 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -500,7 +505,7 @@
 				INFOPLIST_KEY_NSContactsUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -508,6 +513,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Ubah.Payback;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -532,7 +538,7 @@
 				INFOPLIST_KEY_NSContactsUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -540,6 +546,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Ubah.Payback;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -570,17 +577,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B7F5421A29B279D20095560C /* XCRemoteSwiftPackageReference "HotReloading" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/johnno1962/HotReloading.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B7D71E3D2906806A00234120 /* Project object */;
 }
