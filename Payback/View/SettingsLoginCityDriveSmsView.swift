@@ -18,6 +18,8 @@ struct SettingsLoginCityDriveSmsView: View {
     let manager: CityDriveManager
 
     @ObservedResults(UserSettings.self) var settings
+    
+//    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
@@ -39,14 +41,14 @@ struct SettingsLoginCityDriveSmsView: View {
             
             Button(action: {
                 print("sms: " + smsCode)
-
+                
                 manager.authByCode(smsCode: smsCode) { result in
                     switch result {
                     case .success(let model):
                         if model == nil {
                             print("No response") // TODO: handle nil model
                         }
-
+                        
                         let newUserSettings = UserSettings(
                             sessionId: (model?.sessionId)!,
                             lastOrderId: "", // TODO: Remove
@@ -54,7 +56,7 @@ struct SettingsLoginCityDriveSmsView: View {
                             middleName: (model?.sessionUser?.middleName)!,
                             lastName: (model?.sessionUser?.lastName)!
                         )
-
+                        
                         manager.getLastOrder(sessionId: newUserSettings.sessionId) { result in
                             switch result {
                             case .success(let model):
@@ -62,13 +64,16 @@ struct SettingsLoginCityDriveSmsView: View {
                                     print("No response") // TODO: handle nil model
                                 }
                                 newUserSettings.lastOrderId = (model?.orders?[0].orderId)!
-
+                                
                                 for s in settings {
                                     $settings.remove(s)
                                 }
                                 $settings.append(newUserSettings) // TODO: update row
                                 
                                 isFinalResponse = true
+                                
+//                                presentationMode.wrappedValue.dismiss()
+
                                 break;
                             case .failure(let error):
                                 print(error.localizedDescription) // TODO: handle error
@@ -84,7 +89,9 @@ struct SettingsLoginCityDriveSmsView: View {
             }) {
                 Text("Войти")
             }
+            .fullScreenCover(isPresented: $isFinalResponse, content: { ContentView() })
             .buttonStyle(BlueButton())
+        
             Spacer().frame(height: 50)
         }
     }
